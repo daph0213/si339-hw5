@@ -1,0 +1,131 @@
+#logo {
+    animation: mymove 5s 1; 
+}
+
+@keyframes mymove{
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
+body {
+    font-family: 'Popins', serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+header {
+    align-items: center;
+    display:flex;
+    flex-flow: column nowrap;
+}
+
+.nav_links {
+    /* dont know if necessary */
+}
+
+
+a:visited{
+    color: blue;
+}
+
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.card {
+    margin: 12px;
+    background: #fff;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    flex-basis: 450px;
+}
+
+.pricing {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: center;
+}
+
+.gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        justify-content: space-between;
+        display: flex;
+        flex-flow: row;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-flow: row;
+    }
+
+    .card{
+        flex-basis: 275px;
+    }
+
+    .pricing{
+        justify-content: center;
+    }
+
+    body > header {
+        position: sticky;
+        top: 0px;
+    }
+}
+
+@media all and (prefers-reduced-motion:reduce){
+    #logo{
+        animation:none;
+    }
+}
+
+@media print {
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-flow: row;
+        gap:100px;
+    }
+
+    .pricing {
+        display:flex;
+        align-items: flex-end;
+        flex-flow: row;
+      }
+    
+      .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+      }
+    
+      .gallery {
+        display: none;  
+      }
+
+      div li:nth-child(2)::after {
+        content: "\1F44D";
+    }
+    
+}
+
